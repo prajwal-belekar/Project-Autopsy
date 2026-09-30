@@ -1,0 +1,60 @@
+import type { IssuesData, PullRequestsData } from '../types';
+
+export const issuesData: IssuesData = {
+  open: 34,
+  closed: 212,
+  reopened: 9,
+  stale: 11,
+  bugs: 58,
+  enhancements: 47,
+  trend: [
+    { month: 'Oct 25', opened: 12, closed: 6, bugs: 4 },
+    { month: 'Nov 25', opened: 18, closed: 11, bugs: 6 },
+    { month: 'Dec 25', opened: 26, closed: 14, bugs: 11 },
+    { month: 'Jan 26', opened: 22, closed: 19, bugs: 8 },
+    { month: 'Feb 26', opened: 31, closed: 22, bugs: 14 },
+    { month: 'Mar 26', opened: 27, closed: 25, bugs: 12 },
+    { month: 'Apr 26', opened: 19, closed: 21, bugs: 7 },
+    { month: 'May 26', opened: 29, closed: 24, bugs: 11 },
+    { month: 'Jun 26', opened: 33, closed: 28, bugs: 15 },
+    { month: 'Jul 26', opened: 21, closed: 26, bugs: 8 },
+    { month: 'Aug 26', opened: 18, closed: 22, bugs: 6 },
+    { month: 'Sep 26', opened: 16, closed: 14, bugs: 7 },
+  ],
+  top: [
+    { id: 'i-482', number: 482, title: 'Auth state resets on token refresh', state: 'reopened', label: 'Bug', ageDays: 61, comments: 12, linkedCommits: 7 },
+    { id: 'i-419', number: 419, title: 'Payment retry can double-charge on gateway timeout', state: 'closed', label: 'Bug', ageDays: 34, comments: 18, linkedCommits: 9 },
+    { id: 'i-388', number: 388, title: 'Sync conflict resolution can drop concurrent deletes', state: 'open', label: 'Bug', ageDays: 88, comments: 9, linkedCommits: 2 },
+    { id: 'i-451', number: 451, title: 'Dashboard layout breaks on Safari < 16.4', state: 'open', label: 'Bug', ageDays: 23, comments: 4, linkedCommits: 1 },
+    { id: 'i-366', number: 366, title: 'Add pagination to audit log view', state: 'closed', label: 'Enhancement', ageDays: 51, comments: 6, linkedCommits: 3 },
+  ],
+};
+
+export const prsData: PullRequestsData = {
+  open: 5,
+  merged: 348,
+  closed: 21,
+  longRunning: 4,
+  reopened: 6,
+  trend: [
+    { month: 'Oct 25', opened: 9, merged: 5 },
+    { month: 'Nov 25', opened: 14, merged: 10 },
+    { month: 'Dec 25', opened: 21, merged: 16 },
+    { month: 'Jan 26', opened: 24, merged: 19 },
+    { month: 'Feb 26', opened: 29, merged: 23 },
+    { month: 'Mar 26', opened: 26, merged: 25 },
+    { month: 'Apr 26', opened: 19, merged: 18 },
+    { month: 'May 26', opened: 28, merged: 24 },
+    { month: 'Jun 26', opened: 31, merged: 27 },
+    { month: 'Jul 26', opened: 22, merged: 21 },
+    { month: 'Aug 26', opened: 18, merged: 17 },
+    { month: 'Sep 26', opened: 20, merged: 12 },
+  ],
+  top: [
+    { id: 'pr-517', number: 517, title: 'Refactor AuthProvider state machine', state: 'open', additions: 410, deletions: 260, openDays: 12, files: 14 },
+    { id: 'pr-502', number: 502, title: 'Webhook replay-window validation', state: 'open', additions: 180, deletions: 40, openDays: 21, files: 6 },
+    { id: 'pr-509', number: 509, title: 'Payment idempotency keys', state: 'merged', additions: 320, deletions: 150, openDays: 6, files: 11 },
+    { id: 'pr-498', number: 498, title: 'Dashboard list virtualization', state: 'merged', additions: 540, deletions: 380, openDays: 9, files: 9 },
+    { id: 'pr-477', number: 477, title: 'Conflict resolver test harness', state: 'reopened', additions: 260, deletions: 30, openDays: 18, files: 7 },
+  ],
+};

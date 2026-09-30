@@ -1,0 +1,51 @@
+import type { CodeHealthData } from '../types';
+
+export const codeHealth: CodeHealthData = {
+  metrics: [
+    { label: 'Maintainability', score: 78, severity: 'low', hint: 'Composite of file size, function size, nesting depth, and naming consistency signals.' },
+    { label: 'Complexity', score: 72, severity: 'medium', hint: 'Inverse of aggregate cyclomatic complexity across functions; 6 files exceed complexity 20.' },
+    { label: 'Coupling', score: 64, severity: 'medium', hint: 'Fan-in / fan-out balance across the module import graph.' },
+    { label: 'Duplication', score: 76, severity: 'low', hint: 'Duplicated code blocks detected by token-level comparison (≥ 8 lines).' },
+    { label: 'Error Handling', score: 70, severity: 'medium', hint: 'Share of async call sites with explicit error handling; unhandled promise rejections.' },
+  ],
+  complexityDistribution: [
+    { band: '1–5', files: 96 },
+    { band: '6–10', files: 48 },
+    { band: '11–15', files: 22 },
+    { band: '16–20', files: 12 },
+    { band: '21+', files: 6 },
+  ],
+  largestFiles: [
+    { path: 'src/auth/AuthProvider.tsx', loc: 610, complexity: 24 },
+    { path: 'src/payments/PaymentProcessor.ts', loc: 575, complexity: 21 },
+    { path: 'src/components/Dashboard.tsx', loc: 540, complexity: 19 },
+    { path: 'src/api/client.ts', loc: 480, complexity: 14 },
+    { path: 'src/sync/ConflictResolver.ts', loc: 430, complexity: 18 },
+    { path: 'src/auth/SessionManager.ts', loc: 350, complexity: 13 },
+    { path: 'src/components/DataTable.tsx', loc: 320, complexity: 9 },
+    { path: 'src/state/store.ts', loc: 290, complexity: 12 },
+    { path: 'src/api/routes/webhooks.ts', loc: 265, complexity: 11 },
+    { path: 'src/db/migrations.ts', loc: 240, complexity: 7 },
+  ],
+  largestFunctions: [
+    { name: 'AuthProvider (render)', path: 'src/auth/AuthProvider.tsx', loc: 142, complexity: 9 },
+    { name: 'processPayment', path: 'src/payments/PaymentProcessor.ts', loc: 118, complexity: 11 },
+    { name: 'resolveConflicts', path: 'src/sync/ConflictResolver.ts', loc: 96, complexity: 8 },
+    { name: 'fetchWithRetry', path: 'src/api/client.ts', loc: 88, complexity: 7 },
+    { name: 'DashboardGrid (render)', path: 'src/components/Dashboard.tsx', loc: 84, complexity: 6 },
+    { name: 'refreshSession', path: 'src/auth/SessionManager.ts', loc: 76, complexity: 6 },
+    { name: 'applyMigrations', path: 'src/db/migrations.ts', loc: 71, complexity: 5 },
+    { name: 'mapProviderError', path: 'src/auth/AuthProvider.tsx', loc: 63, complexity: 7 },
+    { name: 'normalizeWebhook', path: 'src/api/routes/webhooks.ts', loc: 58, complexity: 5 },
+    { name: 'deepMerge', path: 'src/utils/objects.ts', loc: 47, complexity: 4 },
+  ],
+  coupling: [
+    { module: 'api/client', fanIn: 34, fanOut: 12, score: 88 },
+    { module: 'state/store', fanIn: 28, fanOut: 6, score: 74 },
+    { module: 'ui/components', fanIn: 22, fanOut: 15, score: 70 },
+    { module: 'utils/date', fanIn: 19, fanOut: 1, score: 52 },
+    { module: 'services/auth', fanIn: 14, fanOut: 8, score: 58 },
+    { module: 'db/core', fanIn: 11, fanOut: 2, score: 44 },
+    { module: 'services/sync', fanIn: 6, fanOut: 9, score: 49 },
+  ],
+};

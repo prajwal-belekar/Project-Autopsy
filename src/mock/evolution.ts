@@ -1,0 +1,91 @@
+import type { EvolutionData } from '../types';
+
+export const evolution: EvolutionData = {
+  note: 'Events are derived from commit clusters, file creation dates, and cross-referenced issues and pull requests. Each event links to its underlying evidence.',
+  events: [
+    {
+      id: 'ev-01', month: 'Oct 2025', date: '2025-10-06', title: 'Project initialization',
+      description: 'Initial scaffold: Vite + React + TypeScript, base tooling, CI pipeline.',
+      commits: 42, filesChanged: 96, modules: ['shared/utils'], issues: 0, prs: 3,
+      complexityChange: 0, frictionChange: 0,
+      evidenceLink: { label: 'Git history · Oct 2025', to: 'git' },
+    },
+    {
+      id: 'ev-02', month: 'Nov 2025', date: '2025-11-14', title: 'API layer introduced',
+      description: 'HTTP client, retry/backoff, and first REST route modules.',
+      commits: 68, filesChanged: 48, modules: ['api/client', 'api/routes'], issues: 6, prs: 8,
+      complexityChange: 6, frictionChange: 2,
+      evidenceLink: { label: 'Investigate api/client', to: 'file/src/api/client.ts' },
+    },
+    {
+      id: 'ev-03', month: 'Dec 2025', date: '2025-12-08', title: 'Authentication module introduced',
+      description: 'Login flow, token storage, and session persistence land in a single provider component.',
+      commits: 95, filesChanged: 61, modules: ['services/auth', 'ui/state'], issues: 14, prs: 12,
+      complexityChange: 14, frictionChange: 9,
+      evidenceLink: { label: 'Investigate AuthProvider', to: 'file/src/auth/AuthProvider.tsx' },
+    },
+    {
+      id: 'ev-04', month: 'Jan 2026', date: '2026-01-19', title: 'Testing infrastructure added',
+      description: 'Vitest + Playwright adopted; first unit and integration suites.',
+      commits: 110, filesChanged: 39, modules: ['testing'], issues: 4, prs: 11,
+      complexityChange: 1, frictionChange: -4,
+      evidenceLink: { label: 'Testing health', to: 'testing' },
+    },
+    {
+      id: 'ev-05', month: 'Feb 2026', date: '2026-02-11', title: 'Payment module added',
+      description: 'Gateway integration with retry logic; idempotency deferred (FIXME raised).',
+      commits: 132, filesChanged: 57, modules: ['services/payments'], issues: 17, prs: 15,
+      complexityChange: 12, frictionChange: 8,
+      evidenceLink: { label: 'Investigate PaymentProcessor', to: 'file/src/payments/PaymentProcessor.ts' },
+    },
+    {
+      id: 'ev-06', month: 'Mar 2026', date: '2026-03-17', title: 'Authentication refactor: session management extracted',
+      description: 'SessionManager extracted from AuthProvider after a 5-day activity gap.',
+      commits: 118, filesChanged: 44, modules: ['services/auth'], issues: 11, prs: 13,
+      complexityChange: -6, frictionChange: 7,
+      evidenceLink: { label: 'Git forensics · Mar 2026', to: 'git' },
+    },
+    {
+      id: 'ev-07', month: 'Apr 2026', date: '2026-04-06', title: 'Sync service introduced',
+      description: 'Offline sync with conflict resolution; introduces a UI-state circular dependency.',
+      commits: 96, filesChanged: 52, modules: ['services/sync', 'ui/state'], issues: 9, prs: 10,
+      complexityChange: 9, frictionChange: 5,
+      evidenceLink: { label: 'Architecture · circular dependencies', to: 'architecture' },
+    },
+    {
+      id: 'ev-08', month: 'May 2026', date: '2026-05-12', title: 'Dashboard redesigned',
+      description: 'Grid layout rework, widget registration, and Safari layout hack.',
+      commits: 140, filesChanged: 66, modules: ['ui/components'], issues: 13, prs: 16,
+      complexityChange: 8, frictionChange: 6,
+      evidenceLink: { label: 'Investigate Dashboard', to: 'file/src/components/Dashboard.tsx' },
+    },
+    {
+      id: 'ev-09', month: 'Jun 2026', date: '2026-06-15', title: 'Payments overhaul: idempotency keys',
+      description: 'Largest change set in history after a 7-day gap; double-charge FIXME still open.',
+      commits: 155, filesChanged: 73, modules: ['services/payments', 'api/client'], issues: 21, prs: 19,
+      complexityChange: 10, frictionChange: 11,
+      evidenceLink: { label: 'Finding · payment retry risk', to: 'findings' },
+    },
+    {
+      id: 'ev-10', month: 'Jul 2026', date: '2026-07-08', title: 'Performance pass: virtualized lists',
+      description: 'List virtualization across dashboard tables; churn concentrated in UI module.',
+      commits: 121, filesChanged: 31, modules: ['ui/components'], issues: 6, prs: 12,
+      complexityChange: 2, frictionChange: -3,
+      evidenceLink: { label: 'Git forensics · Jul 2026', to: 'git' },
+    },
+    {
+      id: 'ev-11', month: 'Aug 2026', date: '2026-08-21', title: 'Webhook API expanded',
+      description: 'Signature validation and replay-window handling; reverted auth refactor in same window.',
+      commits: 102, filesChanged: 38, modules: ['api/routes', 'services/auth'], issues: 12, prs: 14,
+      complexityChange: 5, frictionChange: 6,
+      evidenceLink: { label: 'Investigate webhooks', to: 'file/src/api/routes/webhooks.ts' },
+    },
+    {
+      id: 'ev-12', month: 'Sep 2026', date: '2026-09-16', title: 'AuthProvider rework in progress',
+      description: 'Provider cache reset fix lands; state-machine refactor PR open.',
+      commits: 105, filesChanged: 29, modules: ['services/auth', 'ui/state'], issues: 8, prs: 9,
+      complexityChange: 3, frictionChange: 8,
+      evidenceLink: { label: 'Open PR #517', to: 'issues' },
+    },
+  ],
+};
