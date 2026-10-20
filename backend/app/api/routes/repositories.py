@@ -1,9 +1,11 @@
 from fastapi import APIRouter, HTTPException
 from app.schemas.analysis import Repository
 from app.services.repository_service import RepositoryService
+from app.services.github_service import GithubService
 
 router = APIRouter()
 repository_service = RepositoryService()
+github_service = GithubService()
 
 
 @router.get("/repositories/{repository_id}", response_model=Repository)
